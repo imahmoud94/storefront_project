@@ -37,7 +37,7 @@ export class UserStore {
       conn.release();
       return result.rows;
     } catch (err) {
-      throw new Error(`Could'nt get users. Error: ${err}`);
+      throw new Error(`Couldn't get users. Error: ${err}`);
     }
   }
   //Show specific user
