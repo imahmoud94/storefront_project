@@ -24,9 +24,9 @@ These are the notes from a meeting with the frontend developer that describe wha
 #### Orders
 
 - Index /orders [GET]
-- Orders by specific user [token required] /orders [GET]
-- Create Order /orders [POST]
-
+- Active Orders by specific user [token required] /orders/:id [GET]
+- Create Order [token required] /orders [POST] body: {user_id}
+- Update Order Completion [token required] /orders [PATCH] body: {id, completed}
 ## Data Shapes
 
 #### Products
