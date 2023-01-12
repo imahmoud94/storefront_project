@@ -81,7 +81,7 @@ const user_routes = (app: express.Application) => {
   app.post('/users/auth', authenticate);
   app.get('/users', index);
   app.get('/users/:id', show);
-  app.post('/users', verifyAuthToken, create);
+  app.post('/users', create);
   app.patch('/users', verifyAuthToken, update);
   app.delete('/users/:id', verifyAuthToken, erase);
 };
