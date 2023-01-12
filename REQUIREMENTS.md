@@ -23,7 +23,9 @@ These are the notes from a meeting with the frontend developer that describe wha
 
 #### Orders
 
-- Orders by user (args: user id)[token required] /orders
+- Index /orders [GET]
+- Orders by specific user [token required] /orders [GET]
+- Create Order /orders [POST]
 
 ## Data Shapes
 
