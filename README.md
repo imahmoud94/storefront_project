@@ -17,6 +17,13 @@ BCRYPT_PASSWORD = mysecretpass
 SALT_ROUNDS = 10
 TOKEN_SECRET = mysecrettoken
 
+You should create two databases with values in POSTGRES_DB and POSTGRES_TEST_DB
+
+- Database setup example using SQL
+- Create user `CREATE USER full_stack_user WITH PASSWORD 'Pass123';`
+- Create database `CREATE DATABASE store_dev; CREATE DATABASE store_test;`
+- Grant privileges to user `GRANT ALL PRIVILEGES ON DATABASE store_dev TO full_stack_user; GRANT ALL PRIVILEGES ON DATABASE store_test TO full_stack_user;`
+
 ## Required Technologies
 
 These are the required technologies for the project:
