@@ -6,7 +6,6 @@ import user_routes from './handlers/userHandler';
 const app: express.Application = express();
 const address = '0.0.0.0:3000';
 
-console.log('hi');
 app.use(bodyParser.json());
 
 //Logger middleware

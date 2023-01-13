@@ -27,6 +27,7 @@ These are the notes from a meeting with the frontend developer that describe wha
 - Active Orders by specific user [token required] /orders/:id [GET]
 - Create Order [token required] /orders [POST] body: {user_id}
 - Update Order Completion [token required] /orders [PATCH] body: {id, completed}
+- Set Product to Order [token required] /orders/:id [POST]
 ## Data Shapes
 
 #### Products
