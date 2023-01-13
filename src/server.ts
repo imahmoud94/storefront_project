@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import user_routes from './handlers/userHandler';
+import order_routes from './handlers/orderHandler';
 
 const app: express.Application = express();
 const address = '0.0.0.0:3000';
@@ -20,3 +21,4 @@ app.listen(3000, function () {
 });
 
 user_routes(app);
+order_routes(app);
