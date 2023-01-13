@@ -17,13 +17,13 @@ These are the required technologies for the project:
 
 ## Steps to Completion
 
-### <ul><li>- [x] 1. Plan to Meet Requirements</li></ul>
+### - [:heavy_check_mark:] 1. Plan to Meet Requirements
 
-### - [x] 2. DB Creation and Migrations
+### - [:heavy_check_mark:] 2. DB Creation and Migrations
 
-### - [x] 3. Models
+### - [:heavy_check_mark:] 3. Models
 
-### - [x] 4. Express Handlers
+### - [:heavy_check_mark:] 4. Express Handlers
 
 ### 5. JWTs
 
