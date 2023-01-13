@@ -25,7 +25,7 @@ These are the required technologies for the project:
 
 ### - [:heavy_check_mark:] 4. Express Handlers
 
-### 5. JWTs
+### - [:heavy_check_mark:] 5. JWTs
 
 Add JWT functionality as shown in the course. Make sure that JWTs are required for the routes listed in `REQUIUREMENTS.md`.
 
