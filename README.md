@@ -2,7 +2,20 @@
 
 ## Getting Started
 
-This repo contains a basic Node and Express app to get you started in constructing an API. To get started, clone this repo and run `yarn` in your terminal at the project root.
+To get started, clone this repo and run `yarn` or `npm i` in your terminal at the project root.
+
+These are the environment variables used in .env file
+
+NODE_ENV=dev
+POSTGRES_HOST=127.0.0.1
+POSTGRES_PORT=5432
+POSTGRES_DB=store_dev
+POSTGRES_TEST_DB=store_test
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=admin
+BCRYPT_PASSWORD = mysecretpass
+SALT_ROUNDS = 10
+TOKEN_SECRET = mysecrettoken
 
 ## Required Technologies
 
@@ -14,6 +27,18 @@ These are the required technologies for the project:
 - db-migrate from npm for migrations
 - jsonwebtoken from npm for working with JWTs
 - jasmine from npm for testing
+
+## Overview
+
+### 1. DB Creation and Migrations
+
+- To start running everything in test environment without doing any manual step please run `test`
+- If you wish to run migrations in test environment you can run `migratetestdb` to migrate down for test environment you can run `cleartestdb`
+- If you wish to run migrations in dev environment you can run `migrate-up` and for down migrations run `migrate-down`
+
+### 2. API Endpoints
+
+- Please check REQUIREMENTS.md for all API endpoints
 
 ## Steps to Completion
 
@@ -27,8 +52,4 @@ These are the required technologies for the project:
 
 ### - [:heavy_check_mark:] 5. JWTs
 
-### 6. QA and `README.md`
-
-Before submitting, make sure that your project is complete with a `README.md`. Your `README.md` must include instructions for setting up and running your project including how you setup, run, and connect to your database.
-
-Before submitting your project, spin it up and test each endpoint. If each one responds with data that matches the data shapes from the `REQUIREMENTS.md`, it is ready for submission!
+### - [:heavy_check_mark:] 6. QA and `README.md`
