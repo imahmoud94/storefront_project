@@ -10,7 +10,7 @@ These are the notes from a meeting with the frontend developer that describe wha
 
 - Index /products [GET]
 - Show /products/:id [GET]
-- Create [token required] /products [POST]
+- Create [bearer token required] /products [POST]
 
 #### Users
 
@@ -25,9 +25,9 @@ These are the notes from a meeting with the frontend developer that describe wha
 
 - Index /orders [GET]
 - Active Orders by specific user [token required] /orders/:id [GET]
-- Create Order [token required] /orders [POST] body: {user_id}
-- Update Order Completion [token required] /orders [PATCH] body: {id, completed}
-- Set Product to Order [token required] /orders/:id [POST]
+- Create Order [bearer token required] /orders [POST] body: {user_id}
+- Update Order Completion [bearer token required] /orders [PATCH] body: {id, completed}
+- Set Product to Order [bearer token required] /orders/:orderId [POST] body: {product_id, quantity}
 ## Data Shapes
 
 #### Products
