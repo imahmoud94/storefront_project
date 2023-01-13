@@ -21,9 +21,7 @@ These are the required technologies for the project:
 
 ### - [x] 2. DB Creation and Migrations
 
-### 3. Models
-
-Create the models for each database table. The methods in each model should map to the endpoints in `REQUIREMENTS.md`. Remember that these models should all have test suites and mocks.
+### - [x] 3. Models
 
 ### 4. Express Handlers
 
