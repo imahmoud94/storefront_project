@@ -3,6 +3,7 @@ import { Order, OrderStore } from '../models/orderModel';
 import jwt from 'jsonwebtoken';
 import config from '../lib/config';
 import verifyAuthToken from '../middlewares/auth';
+import { idText } from 'typescript';
 
 const store = new OrderStore();
 
@@ -59,7 +60,8 @@ const updateOrder = async (req: Request, res: Response) => {
 const setProductToOrder = async (req: Request, res: Response) => {
   try {
     const { product_id, quantity } = req.body;
-    const newOrderProduct = await store.setProduct(product_id, req.params.id as unknown as number, quantity);
+
+    const newOrderProduct = await store.setProduct(product_id, parseInt(req.params.id as unknown as string), quantity);
     res.json(newOrderProduct);
   } catch (err) {
     res.status(400);
