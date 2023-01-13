@@ -27,8 +27,6 @@ These are the required technologies for the project:
 
 ### - [:heavy_check_mark:] 5. JWTs
 
-Add JWT functionality as shown in the course. Make sure that JWTs are required for the routes listed in `REQUIUREMENTS.md`.
-
 ### 6. QA and `README.md`
 
 Before submitting, make sure that your project is complete with a `README.md`. Your `README.md` must include instructions for setting up and running your project including how you setup, run, and connect to your database.
