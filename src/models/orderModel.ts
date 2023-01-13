@@ -36,7 +36,7 @@ export class OrderStore {
 
       return result.rows;
     } catch (err) {
-      throw new Error(`Could not find orders ${id}. Error: ${err}`);
+      throw new Error(`Could not find orders ${user_id}. Error: ${err}`);
     }
   }
   //Create Order
