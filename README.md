@@ -17,7 +17,7 @@ These are the required technologies for the project:
 
 ## Steps to Completion
 
-### - [x] 1. Plan to Meet Requirements
+### <ul><li>- [x] 1. Plan to Meet Requirements</li></ul>
 
 ### - [x] 2. DB Creation and Migrations
 
