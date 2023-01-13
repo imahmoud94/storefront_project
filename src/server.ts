@@ -4,10 +4,16 @@ import morgan from 'morgan';
 import user_routes from './handlers/userHandler';
 import order_routes from './handlers/orderHandler';
 import product_routes from './handlers/productHandler';
+import cors from 'cors';
 
 const app: express.Application = express();
 const address = '0.0.0.0:3000';
 
+const corsOptions = {
+  origin: 'http://someotherdomain.com',
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 //Logger middleware
