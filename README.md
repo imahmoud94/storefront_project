@@ -23,9 +23,7 @@ These are the required technologies for the project:
 
 ### - [x] 3. Models
 
-### 4. Express Handlers
-
-Set up the Express handlers to route incoming requests to the correct model method. Make sure that the endpoints you create match up with the enpoints listed in `REQUIREMENTS.md`. Endpoints must have tests and be CORS enabled.
+### - [x] 4. Express Handlers
 
 ### 5. JWTs
 
