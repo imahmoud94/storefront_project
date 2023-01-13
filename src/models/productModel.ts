@@ -39,7 +39,6 @@ export class ProductStore {
       const sql = 'INSERT INTO products (product_name, price) VALUES ($1, $2) RETURNING *';
       const result = await conn.query(sql, [p.product_name, p.price]);
       conn.release();
-
       return result.rows[0];
     } catch (err) {
       throw new Error(`Unable to create product. Error: ${err}`);

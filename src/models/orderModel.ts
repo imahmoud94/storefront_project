@@ -72,6 +72,7 @@ export class OrderStore {
       const conn = await Client.connect();
       const sql = `SELECT * FROM orders WHERE id=($1)`;
       const result = (await conn.query(sql, [order_id])).rows[0];
+
       if (result.completed !== false) {
         throw new Error('Order is already completed');
       }

@@ -57,7 +57,7 @@ export class UserStore {
   async update(user: User): Promise<User> {
     try {
       const conn = await Client.connect();
-      const sql = 'UPDATE users SET user_name=$1, first_name=$2, last_name=$3, password=$4, id=$5 RETURNING *';
+      const sql = 'UPDATE users SET user_name=$1, first_name=$2, last_name=$3, password=$4 WHERE id=$5 RETURNING *';
       const result = await conn.query(sql, [
         user.user_name,
         user.first_name,
@@ -66,7 +66,6 @@ export class UserStore {
         user.id
       ]);
       conn.release();
-
       return result.rows[0];
     } catch (err) {
       throw new Error(`Unable to update user ${user.id}. Error: ${err}`);
@@ -92,7 +91,7 @@ export class UserStore {
       const sql = 'SELECT password FROM users WHERE user_name=($1)';
       const result = await conn.query(sql, [username]);
 
-      console.log(password + config.pepper);
+      //console.log(password + config.pepper);
 
       if (result.rows.length) {
         const user = result.rows[0];
@@ -103,7 +102,7 @@ export class UserStore {
           );
 
           const finalUserData = { ...userData.rows[0], ...user };
-          console.log(finalUserData);
+          //console.log(finalUserData);
           return finalUserData;
         }
       }
