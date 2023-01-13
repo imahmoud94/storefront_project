@@ -12,7 +12,8 @@
     "build": "tsc",
     "format": "prettier --write src/**/*.ts",
     "lint": "eslint src/**/*.ts",
-    "migrate-up": "db-migrate up"
+    "migrate-up": "db-migrate up",
+    "migrate-down": "db-migrate reset"
   },
   "author": "Udacity",
   "license": "ISC",
