@@ -96,10 +96,15 @@ export class UserStore {
 
       if (result.rows.length) {
         const user = result.rows[0];
-        console.log(user);
-
         if (bcrypt.compareSync(password + config.pepper, user.password)) {
-          return user;
+          const userData = await conn.query(
+            `SELECT id, user_name, first_name, last_name FROM users WHERE user_name=($1)`,
+            [username]
+          );
+
+          const finalUserData = { ...userData.rows[0], ...user };
+          console.log(finalUserData);
+          return finalUserData;
         }
       }
 
