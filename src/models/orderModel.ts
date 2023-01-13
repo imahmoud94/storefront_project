@@ -27,11 +27,11 @@ export class OrderStore {
     }
   }
   //Show current active orders from a specific user
-  async showUserOrders(id: string): Promise<Order[]> {
+  async showUserOrders(user_id: string): Promise<Order[]> {
     try {
       const conn = await Client.connect();
-      const sql = `SELECT * FROM orders WHERE id=($1) AND completed='true';`;
-      const result = await conn.query(sql, [id]);
+      const sql = `SELECT * FROM orders WHERE user_id=($1) AND completed='false';`;
+      const result = await conn.query(sql, [user_id]);
       conn.release();
 
       return result.rows;
@@ -63,6 +63,30 @@ export class OrderStore {
       return result.rows[0];
     } catch (err) {
       throw new Error(`Unable to update order ${id}. Error: ${err}`);
+    }
+  }
+
+  //Update orders with products
+  async setProduct(product_id: number, order_id: number, quantity: number): Promise<OrderProducts> {
+    try {
+      const conn = await Client.connect();
+      const sql = `SELECT * FROM orders WHERE id=($1)`;
+      const result = (await conn.query(sql, [order_id])).rows[0];
+      if (result.completed !== false) {
+        throw new Error('Order is already completed');
+      }
+    } catch (err) {
+      throw new Error(`Could not find order. Error:${err}`);
+    }
+
+    try {
+      const conn = await Client.connect();
+      const sql = `INSERT INTO order_products (product_id, order_id, quantity) VALUES ($1, $2, $3) RETURNING *`;
+      const result = await conn.query(sql, [product_id, order_id, quantity]);
+
+      return result.rows[0];
+    } catch (err) {
+      throw new Error(`Failed to update order. Error: ${err}`);
     }
   }
 }
