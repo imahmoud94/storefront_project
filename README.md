@@ -7,14 +7,23 @@ To get started, clone this repo and run `yarn` or `npm i` in your terminal at th
 These are the environment variables used in .env file
 
 NODE_ENV=dev
+
 POSTGRES_HOST=127.0.0.1
+
 POSTGRES_PORT=5432
+
 POSTGRES_DB=store_dev
+
 POSTGRES_TEST_DB=store_test
+
 POSTGRES_USER=postgres
+
 POSTGRES_PASSWORD=admin
+
 BCRYPT_PASSWORD = mysecretpass
+
 SALT_ROUNDS = 10
+
 TOKEN_SECRET = mysecrettoken
 
 You should create two databases with values in POSTGRES_DB and POSTGRES_TEST_DB
